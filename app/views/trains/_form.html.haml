@@ -1,0 +1,20 @@
+= form_for @train do |f|
+  - if @train.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@train.errors.count, "error")} prohibited this train from being saved:"
+      %ul
+        - @train.errors.full_messages.each do |message|
+          %li= message
+  .form-group
+    = f.text_field :train_number, placeholder: 'Train number', class: "form-control"
+  %br
+  .form-group
+    = f.select :carriage_type,["Passanger carriage", "Cargo carriage"], {prompt: "- Train type -"}, class: "form-control"
+  %br
+  .form-group
+    = f.text_field :route, placeholder: 'Route', class: "form-control"
+  %br
+  .form-group
+    = f.text_field :carriage_max, placeholder: 'Carriage max', class: "form-control"
+  .actions
+    = f.submit 'Save'

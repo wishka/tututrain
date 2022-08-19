@@ -31,8 +31,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_18_055258) do
   end
 
   create_table "trains", force: :cascade do |t|
-    t.string "train_numer"
-    t.string "type"
+    t.string "train_number"
+    t.string "carriage_type"
     t.string "route"
     t.string "carriage_list"
     t.integer "carriage_max"

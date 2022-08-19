@@ -1,4 +1,12 @@
 %h1 Trains scheduler
 .flex-container
   .flex-item
-    = Time.current.to_s
+    .clock
+      %ul
+        %li#hours 00
+        %li#separator :
+        %li#minutes 00
+        %li#separator :
+        %li#seconds 00
+
+  = link_to "Create train", new_train_path
